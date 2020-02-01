@@ -97,10 +97,15 @@ PrefabInstance:
       propertyPath: EPixelType
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8915390124888543750, guid: 47d7ab76b593450468036aa8cdcdd32f,
+        type: 3}
+      propertyPath: EPixelColor
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8915390124888543752, guid: 47d7ab76b593450468036aa8cdcdd32f,
         type: 3}
       propertyPath: m_Name
-      value: Golden Pixel
+      value: Golden Pixel Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47d7ab76b593450468036aa8cdcdd32f, type: 3}

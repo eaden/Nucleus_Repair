@@ -26,12 +26,18 @@ public class NucleusScript : MonoBehaviour
 
     public bool isKeyDown = false;
 
+    private void Awake()
+    {
+        GameManager._Initiate();
+        GameManager.CreateColorDic();
+        Stats = ScriptableObject.CreateInstance<NucleusStats>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-        GameManager._Initiate();
-        GameManager.CreateColorDic();
+
         Spawn(7);
     }
 

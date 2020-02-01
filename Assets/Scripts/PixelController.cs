@@ -11,15 +11,7 @@ public enum PixelType
     gold
 }
 
-public enum PixelColors
-{
-    pink,
-    cyan,
-    green,
-    blue,
-    red,
-    gold
-}
+
 
 public class PixelController : MonoBehaviour
 {
