@@ -23,7 +23,7 @@ public class PixelController : MonoBehaviour
     [SerializeField]
     private Color cPixelHue = Color.white;
 
-    [SerializeField] [Range(0.5f,2f)]
+    [SerializeField] [Range(0.25f,1.5f)]
     private float fPixelSize = 1f;
 
     private float tPixelTimer;
@@ -54,7 +54,7 @@ public class PixelController : MonoBehaviour
     {
         if (isConnected)
         {
-            //HandlePixeLive();
+            HandlePixeLive();
         }
     }
 
@@ -63,7 +63,7 @@ public class PixelController : MonoBehaviour
         if (!isActive)
         {
             //ToDo: activate on LIFE!!
-            // Destroy(gameObject, fTimeToLive); 
+            Destroy(gameObject, fTimeToLive); 
             isActive = true;
         }
         tPixelTimer += Time.fixedDeltaTime;
@@ -72,9 +72,11 @@ public class PixelController : MonoBehaviour
 
         sr.color = Color.Lerp(Color.white, cPixelHue, tTemp);
 
-        if (fTimeToLive - tPixelTimer <= 2f)
+        float fDeadCD = 0.2f;
+        if (tTemp <= fDeadCD)
         {
-            gameObject.transform.localScale = Vector2.Lerp(transform.localScale, Vector2.zero, (fTimeToLive - tPixelTimer / 2));
+            Debug.Log(gameObject.name + " " +tTemp);
+            gameObject.transform.localScale = Vector2.Lerp(Vector2.zero,transform.localScale, tTemp*10);
         }
     }
 

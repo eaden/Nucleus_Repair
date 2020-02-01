@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4865b1089a2e87f43b6d4e11a9ac12dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fPullRadius: 4.5
+  fPullRadius: 3
   fPullForce: 0.1
   fConnectForce: 1
   parent: {fileID: 6578566699294440987}

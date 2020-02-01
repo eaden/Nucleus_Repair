@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class NucleusOrbitScript : MonoBehaviour
 {
-    public float fPullRadius = 4.5f;
+    public float fPullRadius = 2.5f;
     public float fPullForce = 0.1f;
     public float fConnectForce = 1f;
 

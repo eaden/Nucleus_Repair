@@ -136,12 +136,12 @@ PrefabInstance:
     - target: {fileID: 6578566699294440991, guid: 0efea2629700f314983d84d0b849b8e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.4
+      value: -6.666
       objectReference: {fileID: 0}
     - target: {fileID: 6578566699294440991, guid: 0efea2629700f314983d84d0b849b8e2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0.516
       objectReference: {fileID: 0}
     - target: {fileID: 6578566699294440991, guid: 0efea2629700f314983d84d0b849b8e2,
         type: 3}
@@ -187,6 +187,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578566699294440991, guid: 0efea2629700f314983d84d0b849b8e2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3669789
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578566699294440991, guid: 0efea2629700f314983d84d0b849b8e2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3669789
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578566699294440991, guid: 0efea2629700f314983d84d0b849b8e2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3669789
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0efea2629700f314983d84d0b849b8e2, type: 3}
@@ -260,27 +275,27 @@ PrefabInstance:
     - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
         type: 3}
       propertyPath: fTimeToLive
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
         type: 3}
       propertyPath: cPixelHue.r
-      value: 0.3726415
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
         type: 3}
       propertyPath: cPixelHue.g
-      value: 0.63129073
+      value: 0.15598364
       objectReference: {fileID: 0}
     - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
         type: 3}
       propertyPath: cPixelHue.b
-      value: 1
+      value: 0.8584906
       objectReference: {fileID: 0}
     - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
         type: 3}
       propertyPath: fPixelSize
-      value: 2
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
         type: 3}
@@ -359,17 +374,17 @@ PrefabInstance:
     - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
         type: 3}
       propertyPath: cPixelHue.r
-      value: 1
+      value: 0.8490566
       objectReference: {fileID: 0}
     - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
         type: 3}
       propertyPath: cPixelHue.g
-      value: 0.2117647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
         type: 3}
       propertyPath: cPixelHue.b
-      value: 0.690735
+      value: 0.644767
       objectReference: {fileID: 0}
     - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
         type: 3}
@@ -541,17 +556,22 @@ PrefabInstance:
     - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
         type: 3}
       propertyPath: cPixelHue.r
-      value: 1
+      value: 0.990566
       objectReference: {fileID: 0}
     - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
         type: 3}
       propertyPath: cPixelHue.g
-      value: 0.9687812
+      value: 0.56235063
       objectReference: {fileID: 0}
     - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
         type: 3}
       propertyPath: cPixelHue.b
-      value: 0
+      value: 0.014017418
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
+        type: 3}
+      propertyPath: fTimeToLive
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ffa43b3e3c2b44aa91a50e34b7373c, type: 3}
@@ -625,7 +645,22 @@ PrefabInstance:
     - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
         type: 3}
       propertyPath: fPixelSize
-      value: 2
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
+        type: 3}
+      propertyPath: cPixelHue.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
+        type: 3}
+      propertyPath: cPixelHue.g
+      value: 0.8584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552330878665085799, guid: e9ffa43b3e3c2b44aa91a50e34b7373c,
+        type: 3}
+      propertyPath: cPixelHue.b
+      value: 0.5188225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ffa43b3e3c2b44aa91a50e34b7373c, type: 3}
