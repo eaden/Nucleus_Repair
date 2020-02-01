@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gobject: {fileID: 1419241031}
+  b: 0
+  g: 0
 --- !u!114 &93707441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,9 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _effects: {fileID: 11400000, guid: 08e60c893c420c2409355ad7777e8a44, type: 2}
-  _output: {fileID: 24300002, guid: a2b710a571ceb794f806f72c1fe6619e, type: 2}
-  Bpm: 60
-  NumBeatsPerSegment: 1
+  _tracks: {fileID: 11400000, guid: 45c00cae98c0a53468b918fd2aef918b, type: 2}
+  Bpm: 106
 --- !u!4 &93707442
 Transform:
   m_ObjectHideFlags: 0
