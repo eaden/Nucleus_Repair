@@ -12,7 +12,8 @@ public enum PixelColors
     green,
     blue,
     red,
-    gold
+    gold,
+    orange
 }
 
 
@@ -51,12 +52,15 @@ public static class GameManager
     public static void CreateColorDic()
     {
 
-    GameManager.Color_Dic.Add(PixelColors.blue, Color.blue);
-    GameManager.Color_Dic.Add(PixelColors.cyan, Color.cyan);
-    GameManager.Color_Dic.Add(PixelColors.green, Color.green);
-    GameManager.Color_Dic.Add(PixelColors.pink, Color.magenta);
-    GameManager.Color_Dic.Add(PixelColors.red, Color.red);
-    GameManager.Color_Dic.Add(PixelColors.gold, new Color(0.95f, 0.75f, 0));
+        GameManager.Color_Dic.Add(PixelColors.blue, Color.blue);
+        GameManager.Color_Dic.Add(PixelColors.cyan, Color.cyan);
+        GameManager.Color_Dic.Add(PixelColors.green, Color.green);
+        GameManager.Color_Dic.Add(PixelColors.pink, Color.magenta);
+        GameManager.Color_Dic.Add(PixelColors.red, Color.red);
+        GameManager.Color_Dic.Add(PixelColors.gold, new Color(0.95f, 0.75f, 0));
+        GameManager.Color_Dic.Add(PixelColors.orange, new Color(0, 0, 0));
+
+
         Debug.Log("Color_DIC created");
     }
 

@@ -6,7 +6,7 @@ public enum PixelType
 {
     basic,
     speed,
-    inertia,
+    orbit,
     sinister,
     gold
 }
