@@ -1,0 +1,5 @@
+Also Nucleus-Gravity und Rotation (B=(links); M=(rechts)) ist implementiert.
+Ich habe Prefab für Nucleus und Pixel angelegt und dabei die Größen angepasst.
+Bitte die Scalierung erstmal nicht ändern.
+
+HAVE FUN :*
