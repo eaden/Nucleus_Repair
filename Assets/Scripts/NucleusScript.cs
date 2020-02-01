@@ -11,8 +11,19 @@ public class NucleusScript : MonoBehaviour
     [SerializeField]
     private NucleusStats Stats;
 
+    private float maxSpeed = 150;
     [SerializeField]
     private float speed = 5;
+    public float Speed
+    {
+        get { return speed; }
+        set
+        {
+            if (value > maxSpeed)
+                value = maxSpeed;
+            speed = value;
+        }
+    }
 
     [SerializeField]
     private float fRotationSpeed = 300f;

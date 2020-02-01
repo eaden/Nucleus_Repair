@@ -43,9 +43,10 @@ public class NucleusOrbitScript : MonoBehaviour
             //Debug.Log("attracted " + collider.name);
             // calculate direction from target to me
             Vector3 forceDirection = transform.position - collider.transform.position;
-
+            if (!collider.gameObject.GetComponent<PixelController>().isInOrbit)
+                collider.gameObject.GetComponent<PixelController>().isInOrbit = true;
             // apply force on target towards me
-            if(!collider.gameObject.GetComponent<PixelController>().isConnected)
+            if (!collider.gameObject.GetComponent<PixelController>().isConnected)
                 collider.gameObject.GetComponent<Rigidbody2D>().AddForce(forceDirection.normalized * fPullForce * Time.fixedDeltaTime);
             else 
                 collider.gameObject.GetComponent<Rigidbody2D>().AddForce(forceDirection.normalized * fConnectForce * Time.fixedDeltaTime);
