@@ -79,7 +79,6 @@ public class PixelController : MonoBehaviour
         tPixelTimer = 0f;
         gameObject.tag = "Pixel";
         renderer.material.SetColor("_MainColor", cPixelHue);
-        renderer.material.SetColor("_MainColor", cPixelHue);
         RB.mass = baseMass + (baseMass * massInertia * (fPixelSize - 1));
         cPixelTransparent = new Color(cPixelHue.r, cPixelHue.g, cPixelHue.b, 0);
     }
