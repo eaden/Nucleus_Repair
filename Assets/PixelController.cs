@@ -36,7 +36,7 @@ public class PixelController : MonoBehaviour
         
         sr = gameObject.GetComponent<SpriteRenderer>();
         sr.color = cPixelHue;
-        gameObject.transform.localScale = new Vector2(fPixelSize, fPixelSize);
+        gameObject.transform.localScale *= new Vector2(fPixelSize, fPixelSize);
 
         // placeholder
         // Set some properties depending in PixelType if neccesary, before spawn        
