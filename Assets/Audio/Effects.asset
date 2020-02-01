@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Effects
   m_EditorClassIdentifier: 
   AudioClips:
-  - {fileID: 8300000, guid: 7147873a76a8eff4295bd35aa7486a74, type: 3}
+  - Clip: {fileID: 8300000, guid: 7147873a76a8eff4295bd35aa7486a74, type: 3}
+    Volume: 1
+  - Clip: {fileID: 8300000, guid: 483cadca4a674354ab930e3f18f79ebe, type: 3}
+    Volume: 1
+  - Clip: {fileID: 8300000, guid: abf150af959f0c745af24a6e6fe35572, type: 3}
+    Volume: 1

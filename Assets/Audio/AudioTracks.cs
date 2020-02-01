@@ -14,18 +14,19 @@ namespace Assets.Audio
             Guitar,
             HigherDrums,
             LowerDrums,
+            NucleusBackground,
         }
 
         [SerializeField]
-        private List<AudioClip> AudioClips = new List<AudioClip>(Enum.GetValues(typeof(Tracks)).Length);
+        private List<AudioInfo> AudioClips = new List<AudioInfo>(Enum.GetValues(typeof(Tracks)).Length);
 
-        public Dictionary<Tracks, AudioClip> Clips { get; } = new Dictionary<Tracks, AudioClip>();
+        public Dictionary<Tracks, AudioInfo> Clips { get; } = new Dictionary<Tracks, AudioInfo>();
 
         public void OnEnable()
         {
             foreach (var effect in (Tracks[])Enum.GetValues(typeof(Tracks)))
             {
-                this.Clips.Add(effect, this.AudioClips.First(c => c.name == effect.ToString()));
+                this.Clips.Add(effect, this.AudioClips.First(c => c.Clip.name == effect.ToString()));
             }
         }
     }

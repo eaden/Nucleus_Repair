@@ -10,19 +10,21 @@ namespace Assets.Audio
     {
         public enum Effects
         {
-            AddPixel
+            AddPixel,
+            Shot,
+            Spray,
         }
 
         [SerializeField]
-        private List<AudioClip> AudioClips = new List<AudioClip>(Enum.GetValues(typeof(Effects)).Length);
+        private List<AudioInfo> AudioClips = new List<AudioInfo>(Enum.GetValues(typeof(Effects)).Length);
 
-        public Dictionary<Effects, AudioClip> Clips { get; } = new Dictionary<Effects, AudioClip>();
+        public Dictionary<Effects, AudioInfo> Clips { get; } = new Dictionary<Effects, AudioInfo>();
 
         public void OnEnable()
         {
             foreach (var effect in (Effects[]) Enum.GetValues(typeof(Effects)))
             {
-                this.Clips.Add(effect, this.AudioClips.First(c => c.name == effect.ToString()));
+                this.Clips.Add(effect, this.AudioClips.First(c => c.Clip.name == effect.ToString()));
             }
         }
     }

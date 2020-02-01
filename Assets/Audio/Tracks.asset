@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Tracks
   m_EditorClassIdentifier: 
   AudioClips:
-  - {fileID: 8300000, guid: e2b81dfb05d3541469bbcd39962a51ee, type: 3}
-  - {fileID: 8300000, guid: 22637f62b02806746b5f9cd3e559a1dd, type: 3}
-  - {fileID: 8300000, guid: 58f1e2bdc0f5baf408d9be2ff25120d8, type: 3}
-  - {fileID: 8300000, guid: bd8890b67f2ab734596216a67d420396, type: 3}
+  - Clip: {fileID: 8300000, guid: e2b81dfb05d3541469bbcd39962a51ee, type: 3}
+    Volume: 1
+  - Clip: {fileID: 8300000, guid: 22637f62b02806746b5f9cd3e559a1dd, type: 3}
+    Volume: 0.707
+  - Clip: {fileID: 8300000, guid: bd8890b67f2ab734596216a67d420396, type: 3}
+    Volume: 1
+  - Clip: {fileID: 8300000, guid: 58f1e2bdc0f5baf408d9be2ff25120d8, type: 3}
+    Volume: 1
+  - Clip: {fileID: 8300000, guid: 8372169dda4aba445af57629d179cfc1, type: 3}
+    Volume: 1

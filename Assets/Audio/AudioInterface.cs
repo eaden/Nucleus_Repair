@@ -14,7 +14,7 @@ namespace Assets.Audio
         private readonly Dictionary<AudioSource, double> _sources = new Dictionary<AudioSource, double>();
         private readonly Dictionary<AudioTracks.Tracks, AudioSource> _usedTracks = new Dictionary<AudioTracks.Tracks, AudioSource>();
 
-        public float Bpm = 140.0f;
+        public float Bpm = 106.0f;
 
         private int _bar = 0;
         private int _beatInBar = 0;
@@ -49,7 +49,9 @@ namespace Assets.Audio
 
             this._usedTracks.Add(track, source);
 
-            source.clip = this._tracks.Clips[track];
+            var audio = this._tracks.Clips[track];
+            source.clip = audio.Clip;
+            source.volume = audio.Volume;
             source.loop = true;
             source.transform.parent = null;
             source.spatialBlend = 0;
@@ -115,8 +117,9 @@ namespace Assets.Audio
         {
             var source = GetAudioSource();
 
-            var clip = this._effects.Clips[effect];
-            source.clip = clip;
+            var audio = this._effects.Clips[effect];
+            source.clip = audio.Clip;
+            source.volume = audio.Volume;
             source.loop = false;
 
             if (destination != null)
