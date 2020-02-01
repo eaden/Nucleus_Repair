@@ -155,7 +155,9 @@ namespace Assets.Audio
             var nextTick = this._nextEventTime - time;
             if (next)
             {
-                var rawDelay = (delay - 1) * this.TimeBetweenEvents * (int) type + nextTick;
+                var typeTicks = (delay - 1) * this.TimeBetweenEvents * (int) type;
+                var ticksUntilType = this.TimeBetweenEvents * ((int) type - (this._beatInBar + 2) % (int) type);
+                var rawDelay = typeTicks + nextTick + ticksUntilType;
                 return rawDelay;
             }
 

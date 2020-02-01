@@ -29,6 +29,10 @@ public class testaudio : MonoBehaviour
         {
             this.iface.PlaySoundEffect(AudioEffects.Effects.AddPixel, this.gobject, 1, false, AudioInterface.BeatType.Full);
         }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            this.iface.PlaySoundEffect(AudioEffects.Effects.AddPixel, null, 1, true, AudioInterface.BeatType.Quarter);
+        }
 
         if (Input.GetKeyDown(KeyCode.B))
         {
