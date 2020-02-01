@@ -59,14 +59,15 @@ public class PixelController : MonoBehaviour
     //private Dictionary<PixelColors, Color> Color_Dic ; // ausgelagert in GameManager
 
     private NucleusScript nucleus;
-    private float nucleusOrbitRadius = 2.5f;
+    private NucleusOrbitScript nucleusOrbit;
+    private float nucleusOrbitRadius = 0.0f;
     // colorsettings
     // green
-    private float pullRadius_greenPixel = 1f;
+    private float pullRadius_greenPixel = 15f;
     private float addLiveTime_greenPixel = 10f;
 
     // red
-    private float pullRadius_redPixel = 1f;
+    private float pullRadius_redPixel = 10f;
     private float subtractLiveTime_redPixel = 20f;
 
     // cyan
@@ -75,7 +76,9 @@ public class PixelController : MonoBehaviour
 
     // pink
     private Vector3 rotate_axis_pinkPixel = new Vector3(0, 0, 1);
-    private float rotate_speed_pinkPixel = 5;
+    private float rotate_speed_pinkPixel = 1;
+    private float distance_pinkPixel = 25;
+    private float mass_pink = 0.0004f;
 
     private void Awake()
     {
@@ -103,9 +106,13 @@ public class PixelController : MonoBehaviour
             HandlePixeLive();
             HandleConnectedPixelCharacteristics();
         }
-        if (Vector3.Distance(transform.position, nucleus.transform.position) > 2.5f)
+        
+        if (Vector3.Distance(transform.position, nucleus.transform.position) > nucleusOrbitRadius)
             isInOrbit = false;
-        if(isInOrbit)
+        
+        // in Orbit or not in Orbit
+
+        if (isInOrbit)
         {
             HandleOrbit();
         }
@@ -114,6 +121,7 @@ public class PixelController : MonoBehaviour
             if (RB.velocity.magnitude > 0.1f)
                 RB.velocity *= 0.96f;
         }
+
     }
 
     private void AdjustBaseSettings()
@@ -128,6 +136,13 @@ public class PixelController : MonoBehaviour
         nucleus = GameObject.Find("Nucleus").gameObject.GetComponent<NucleusScript>();
         if (nucleus == null)
             Debug.Log("Nucleus is not called Nucleus in this scene! ABORT!");
+        nucleusOrbit = GameObject.Find("NucleusOrbit").gameObject.GetComponent<NucleusOrbitScript>();
+        if (nucleusOrbit == null)
+            Debug.Log("NucleusOrbit is not called NucleusOrbit in this scene! ABORT!");
+        nucleusOrbitRadius = nucleusOrbit.fPullRadius+1;
+        distance_pinkPixel += Random.Range(-5, 6);
+        if (EPixelColor == PixelColors.pink)
+            RB.mass = mass_pink;
     }
 
     
@@ -195,9 +210,15 @@ public class PixelController : MonoBehaviour
         switch (EPixelColor)
         {
             case PixelColors.pink:
-                
+                // this makes it so that a certain distance radius is always kept
+                if(Vector3.Distance(nucleus.transform.position, transform.position)< distance_pinkPixel)
+                {
+                    transform.position = (transform.position - nucleus.transform.position).normalized * distance_pinkPixel + nucleus.transform.position;
+                }
+                //transform.RotateAround(nucleus.transform.position, rotate_axis_pinkPixel, rotate_speed_pinkPixel * Time.fixedDeltaTime);
                 break;
             case PixelColors.cyan:
+                //print(Vector3.Distance(transform.position, nucleus.transform.position) + " " + gameObject.name);
                 break;
             case PixelColors.green:
                 break;
