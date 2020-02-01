@@ -11,8 +11,6 @@ public enum PixelType
     gold
 }
 
-
-
 public class PixelController : MonoBehaviour
 {
     //Tag pixel
@@ -84,7 +82,7 @@ public class PixelController : MonoBehaviour
         cPixelTransparent = new Color(cPixelHue.r, cPixelHue.g, cPixelHue.b, 0);
     }
 
-
+    
     private void HandlePixeLive()
     {
         if (!isActive)
@@ -150,4 +148,19 @@ public class PixelController : MonoBehaviour
         Color_Dic.Add(PixelColors.gold, new Color(0.95f, 0.75f, 0));
     }
      */
+
+    public void AdjustSettings2(PixelColors pc, float size)
+    {
+        Debug.Log("vorher " +EPixelColor);
+        cPixelHue = GameManager.Color_Dic[pc];
+        EPixelColor = pc;
+        Debug.Log("nacher" +EPixelColor);
+        tPixelTimer = 0f;
+        //gameObject.tag = "Pixel";
+        renderer.material.SetColor("_MainColor", cPixelHue);
+        //renderer.material.SetColor("_MainColor", cPixelHue);
+        RB.mass = baseMass + (baseMass * massInertia * (size - 1));
+        cPixelTransparent = new Color(cPixelHue.r, cPixelHue.g, cPixelHue.b, 0);
+    }
+
 }
