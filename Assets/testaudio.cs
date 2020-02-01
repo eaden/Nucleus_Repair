@@ -11,10 +11,15 @@ public class testaudio : MonoBehaviour
 
     public Transform gobject;
 
+    public bool b = false;
+    public bool g = false;
+
     // Start is called before the first frame update
     void Start()
     {
         this.iface = this.gameObject.GetComponent<AudioInterface>();
+        this.iface.AddTrack(AudioTracks.Tracks.HigherDrums);
+        this.iface.AddTrack(AudioTracks.Tracks.LowerDrums);
     }
 
     // Update is called once per frame
@@ -22,7 +27,37 @@ public class testaudio : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-            this.iface.PlaySoundEffect(AudioFiles.Effects.AddPixel, this.gobject, 1);
+            this.iface.PlaySoundEffect(AudioEffects.Effects.AddPixel, this.gobject, 1, false, AudioInterface.BeatType.Full);
         }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (this.b)
+            {
+                this.iface.RemoveTrack(AudioTracks.Tracks.Bass);
+            }
+            else
+            {
+                this.iface.AddTrack(AudioTracks.Tracks.Bass);
+            }
+
+            this.b = !this.b;
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            if (this.g)
+            {
+                this.iface.RemoveTrack(AudioTracks.Tracks.Guitar);
+            }
+            else
+            {
+                this.iface.AddTrack(AudioTracks.Tracks.Guitar);
+            }
+
+            this.g = !this.g;
+        }
+
+
     }
 }
