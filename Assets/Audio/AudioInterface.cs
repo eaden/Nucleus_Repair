@@ -153,13 +153,14 @@ namespace Assets.Audio
 
             var time = AudioSettings.dspTime;
             var nextTick = this._nextEventTime - time;
-            var fullTickDelay = delay * this.TimeBetweenEvents * (int) type - this.TimeBetweenEvents;
-            var totalRawDelay = nextTick + fullTickDelay;
             if (next)
             {
-                return totalRawDelay;
+                var rawDelay = (delay - 1) * this.TimeBetweenEvents * (int) type + nextTick;
+                return rawDelay;
             }
 
+            var fullTickDelay = delay * this.TimeBetweenEvents * (int)type - this.TimeBetweenEvents;
+            var totalRawDelay = nextTick + fullTickDelay;
             var result = ((int)BeatType.Full - (this._beatInBar + 1)) * this.TimeBetweenEvents + totalRawDelay;
             var fullBar = this.TimeBetweenEvents * (int)BeatType.Full;
             return result > fullBar ? result - fullBar : result;
