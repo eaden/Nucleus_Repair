@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
 
 public class NucleusScript : MonoBehaviour
 {
     Rigidbody2D rigid;
+
+    [SerializeField]
+    private NucleusStats Stats;
+
     [SerializeField]
     private float speed = 5;
 
@@ -16,12 +21,18 @@ public class NucleusScript : MonoBehaviour
     [SerializeField]
     private float fRadiusSpeed = 1f;
 
+    [SerializeField]
+    private GameObject GoldenPixel;
+
     public bool isKeyDown = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        GameManager._Initiate();
+        GameManager.CreateColorDic();
+        Spawn(7);
     }
 
     // Update is called once per frame
@@ -61,9 +72,45 @@ public class NucleusScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Pixel")
+        if (collision.gameObject.tag == "Pixel" && !collision.gameObject.GetComponent<PixelController>().isConnected)
         {
             collision.gameObject.GetComponent<PixelController>().isConnected = true;
+
+            UpdateStatistics(collision);
+        }
+    }
+
+    private void UpdateStatistics(Collision2D collision)
+    {
+        PixelColors cc = collision.gameObject.GetComponent<PixelController>().getColor();
+        //Debug.Log(cc);
+        //Debug.Log(Stats);
+        Stats.Colors.Add(cc);
+        Stats._stats.Add(new Statistic { EPixColor = cc, iCount = 1, fTTL = collision.gameObject.GetComponent<PixelController>().getTTL(), ftimeStamp = Time.time, });
+        if (collision.gameObject.GetComponent<PixelController>().getType() == PixelType.speed)
+            Stats.fXtraSpeed++;
+
+        List<string> output = new List<string>();
+        foreach (var e in Stats._stats)
+        {
+            output.Add(e.EPixColor + "$"
+                   + e.iCount + "$"
+                   + e.fTTL + "$"
+                   + e.ftimeStamp + ";")
+                    ;
+        }
+
+        GameManager.WriteData(output, output.Count);
+    }
+
+    private void Spawn(int number)
+    {
+        for (int i = 1; i <= number; i++)
+        {
+            GameObject go = Instantiate(GoldenPixel);
+            go.transform.position = new Vector2(transform.position.x + i / 2, transform.position.y + i/2);
+            Vector3 forceDirection = transform.position - go.transform.position;
+            go.GetComponent<Rigidbody2D>().AddForce(forceDirection.normalized * 50f * Time.fixedDeltaTime);
         }
     }
 }

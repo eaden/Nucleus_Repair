@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 6578566699294440980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 6578566699215503477}
   m_Father: {fileID: 0}
@@ -249,8 +249,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f5fa8c81342bb941afb92f3296595c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  Stats: {fileID: 11400000, guid: 9de609008484f75418f9a67ec953def4, type: 2}
+  speed: 50
   fRotationSpeed: 300
-  fConnectionRadius: 1.2
+  fConnectionRadius: 55
   fRadiusSpeed: 1
+  GoldenPixel: {fileID: 6751011961297456677, guid: ccb3201b621c7924ea3faa8c70b970a1,
+    type: 3}
   isKeyDown: 0
